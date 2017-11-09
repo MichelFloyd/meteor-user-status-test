@@ -4,9 +4,10 @@
 
 <body>
   <h1>Welcome to Meteor!</h1>
-
+  {{> loginButtons}}
   {{> hello}}
   {{> info}}
+  {{> connections}}
 </body>
 
 <template name="hello">
@@ -22,4 +23,14 @@
     <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
     <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
   </ul>
+</template>
+
+<template name="connections">
+  <h1>Connections</h1>
+  {{#each connections}}
+    <div>_id: {{_id}} ipAddr: {{ipAddr}} userId: {{userId}} loginTime: {{loginTime}}</div>
+  {{/each}}
+
+  <h1>My IP address:</h1>
+  {{myIp}}
 </template>

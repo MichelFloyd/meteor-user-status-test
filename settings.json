@@ -1,7 +1,0 @@
-{
-  "galaxy.meteor.com": {
-    "env": {
-      "MONGO_URL": "mongodb://admin:BymhR71S9bcJZsO1CtZH@ds145415.mlab.com:45415/cloaklydev"
-    }
-  }
-}

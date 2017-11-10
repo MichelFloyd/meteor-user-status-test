@@ -23,7 +23,6 @@ Meteor.startup(() => {
 
 let ipAddr;
 
-/*
 Meteor.onConnection((connection) => {
   ipAddr = connection.clientAddress;
 });
@@ -33,18 +32,4 @@ Meteor.methods({
     return ipAddr;
   }
 });
-*/
 
-Accounts.onLogin(() => {
-  Meteor.call('clearImpersonation', (err, result) => {
-    if (err) console.log('Error clearing impersonation: ',err);
-  });
-});
-
-Meteor.methods({
-  clearImpersonation(){
-    const user = Meteor.users.findOne(this.userId);
-    if (user && user.impersonating) Meteor.users.update(user._id,{ $unset: 'profile.impersonating' });
-    return;
-  }
-});
